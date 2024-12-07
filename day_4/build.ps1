@@ -1,0 +1,1 @@
+gcc -O2 -o ../bin/aoc_day_4.exe main.c;./../bin/aoc_day_4.exe

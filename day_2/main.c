@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define EXAMPLE
+#ifdef EXAMPLE
+    char* path_input_file = "input(example).txt";
+#else
+    char* path_input_file = "input.txt";
+#endif
+
 static char* load_input(char *path)
 {
     FILE *f = fopen(path, "rb");
@@ -15,17 +22,9 @@ static char* load_input(char *path)
     source_code[fsize] = '\0';
     return source_code;
 }
-static int32_t parse_number(char *line, int32_t s, int32_t e)
-{
-    int32_t length = e - s;
-    char *digit = alloca(sizeof(char) * (length + 1));
-    memcpy(digit, &line[s], sizeof(char) * length);
-    digit[length] = '\0';
-    return atoi(digit);
-}
 int8_t part1()
 {
-    char* input_raw = load_input("input.txt");
+    char* input_raw = load_input(path_input_file);
     int32_t input_size = strlen(input_raw);
 
     int32_t line_count = 1; //last char is \0 instead of \n
@@ -194,7 +193,7 @@ uint8_t saftey_check_error_correction(int8_t sequence[16], uint8_t count)
 }
 int8_t part2()
 {
-    char* input_raw = load_input("input.txt");
+    char* input_raw = load_input(path_input_file);
     int32_t input_size = strlen(input_raw);
 
     int32_t line_count = 1; //last char is \0 instead of \n
@@ -240,8 +239,6 @@ int8_t part2()
 }
 int8_t main()
 {
-    part1();
-    part2();
+    part1();//Example: 2    Input: 660
+    part2();//Example: 4    Input: 689
 }
-
-//689

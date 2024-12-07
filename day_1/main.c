@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define EXAMPLE
 #ifdef EXAMPLE
     const uint8_t digits = 1;
     const uint8_t stride = (digits * 2) + 4;
@@ -80,7 +81,7 @@ int8_t part1()
     free(r);
 
 
-    printf("%i\n",delta);
+    printf("part 1: %i\n",delta);
     return 1;
 }
 
@@ -137,13 +138,11 @@ int8_t part2()
     free(r);
 
 
-    printf("%i\n",similarity);
+    printf("part 2: %i\n",similarity);
     return 1;
 }
 int8_t main()
 {
-    part1();
-    part2();
+    part1();//Example: 11   Input: 1341714
+    part2();//Example: 31   Input: 27384707
 }
-//630426
-//1341714

@@ -1,0 +1,1 @@
+gcc ../bin/aoc_day_3 main.c;./../bin/aoc_day_3
