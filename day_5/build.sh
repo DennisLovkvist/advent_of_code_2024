@@ -1,0 +1,1 @@
+gcc -O2 -o  ../bin/aoc_day_5 main.c;./../bin/aoc_day_5
